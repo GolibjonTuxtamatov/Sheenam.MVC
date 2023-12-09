@@ -83,7 +83,7 @@ namespace Sheenam.MVC.Tests.Unit.Services.Foundations.Users
 
             invalidUserException.AddData(
                 key: nameof(User.Password),
-                values: "Password is required");
+                values: "Text is required");
 
             var expectedUserValidationException = new UserValidationException(invalidUserException);
 

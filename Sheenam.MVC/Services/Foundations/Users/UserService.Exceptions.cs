@@ -18,6 +18,10 @@ namespace Sheenam.MVC.Services.Foundations.Users
             {
                 throw CreateAndLogValidationExcrption(nullException);
             }
+            catch (InvalidUserException invalidUserException)
+            {
+                throw CreateAndLogValidationExcrption(invalidUserException);
+            }
         }
 
         private UserValidationException CreateAndLogValidationExcrption(Xeption exception)
