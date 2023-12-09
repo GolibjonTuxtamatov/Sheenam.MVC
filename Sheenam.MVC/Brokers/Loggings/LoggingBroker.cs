@@ -3,9 +3,9 @@ namespace Sheenam.MVC.Brokers.Loggings
 {
     public class LoggingBroker : ILoggingBroker
     {
-        private readonly ILogger logger;
+        private readonly ILogger<LoggingBroker> logger;
 
-        public LoggingBroker(ILogger logger) =>
+        public LoggingBroker(ILogger<LoggingBroker> logger) =>
             logger = logger;
 
         public void LogError(Exception exception) =>
