@@ -1,12 +1,14 @@
 
 using Sheenam.MVC.Brokers.Loggings;
 using Sheenam.MVC.Brokers.Storages;
+using Sheenam.MVC.Services.Foundations.Users;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<ILoggingBroker, LoggingBroker>();
 builder.Services.AddTransient<IStorageBroker, StorageBroker>();
+builder.Services.AddTransient<IUserService, UserService>();
 
 var app = builder.Build();
 
