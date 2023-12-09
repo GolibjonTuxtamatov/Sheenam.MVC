@@ -16,6 +16,6 @@ namespace Sheenam.MVC.Services.Foundations.Users
         }
 
         public ValueTask<User> AddUserAsync(User user) =>
-            throw new NotImplementedException();
+            this.storageBroker.InsertUserAsync(user);
     }
 }
