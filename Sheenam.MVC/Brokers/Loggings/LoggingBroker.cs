@@ -6,7 +6,7 @@ namespace Sheenam.MVC.Brokers.Loggings
         private readonly ILogger<LoggingBroker> logger;
 
         public LoggingBroker(ILogger<LoggingBroker> logger) =>
-            logger = logger;
+            this.logger = logger;
 
         public void LogError(Exception exception) =>
             this.logger.LogError(exception,exception.Message);
