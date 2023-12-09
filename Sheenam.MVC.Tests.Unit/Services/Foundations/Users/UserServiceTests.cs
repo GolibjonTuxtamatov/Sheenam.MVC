@@ -1,9 +1,12 @@
-﻿using Moq;
+﻿using System.Linq.Expressions;
+using Moq;
 using Sheenam.MVC.Brokers.Loggings;
 using Sheenam.MVC.Brokers.Storages;
 using Sheenam.MVC.Models.Users;
+using Sheenam.MVC.Models.Users.Exceptions;
 using Sheenam.MVC.Services.Foundations.Users;
 using Tynamix.ObjectFiller;
+using Xeptions;
 
 namespace Sheenam.MVC.Tests.Unit.Services.Foundations.Users
 {
@@ -25,6 +28,9 @@ namespace Sheenam.MVC.Tests.Unit.Services.Foundations.Users
 
         private User CreateRandomUser() =>
             CreateUserFiller(GetDateTimeOffset()).Create();
+
+        private Expression<Func<Exception, bool>> SamExceptionAs(Xeption exception) =>
+            actualException => actualException.SameExceptionAs(exception);
 
         private Filler<User> CreateUserFiller(DateTimeOffset date)
         {
