@@ -50,7 +50,7 @@ namespace Sheenam.MVC.Tests.Unit.Services.Foundations.Users
             //given
             User invalidUser = new User
             {
-                FirstName = text,
+                FirstName = text
             };
 
             var invalidUserException = new InvalidUserException();
