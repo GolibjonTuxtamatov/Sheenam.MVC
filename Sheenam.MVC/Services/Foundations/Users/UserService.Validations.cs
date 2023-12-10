@@ -27,7 +27,7 @@ namespace Sheenam.MVC.Services.Foundations.Users
 
         private static dynamic IsInvalid(Guid id) => new
         {
-            Condition = id = Guid.Empty,
+            Condition = id == Guid.Empty,
             Message = "Id is required"
         };
 
@@ -49,9 +49,12 @@ namespace Sheenam.MVC.Services.Foundations.Users
 
             foreach ((dynamic rule, string parameter) in validations)
             {
-                invalidUserException.UpsertDataList(
-                    key: parameter,
-                    value: rule.Message);
+                if (rule.Condition)
+                {
+                    invalidUserException.UpsertDataList(
+                        key: parameter,
+                        value: rule.Message);
+                }
             }
 
             invalidUserException.ThrowIfContainsErrors();
