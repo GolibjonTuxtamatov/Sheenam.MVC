@@ -1,5 +1,5 @@
-﻿using Sheenam.MVC.Models.Users.Exceptions;
-using Sheenam.MVC.Models.Users;
+﻿using Sheenam.MVC.Models.Users;
+using Sheenam.MVC.Models.Users.Exceptions;
 using Xeptions;
 
 namespace Sheenam.MVC.Services.Foundations.Users

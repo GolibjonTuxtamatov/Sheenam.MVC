@@ -1,7 +1,5 @@
-﻿using System.Data;
-using Sheenam.MVC.Models.Users;
+﻿using Sheenam.MVC.Models.Users;
 using Sheenam.MVC.Models.Users.Exceptions;
-using Xeptions;
 
 namespace Sheenam.MVC.Services.Foundations.Users
 {
@@ -32,13 +30,13 @@ namespace Sheenam.MVC.Services.Foundations.Users
             Condition = id = Guid.Empty,
             Message = "Id is required"
         };
-        
+
         private static dynamic IsInvalid(string text) => new
         {
-            Condition =  string.IsNullOrWhiteSpace(text),
+            Condition = string.IsNullOrWhiteSpace(text),
             Message = "Text is required"
         };
-        
+
         private static dynamic IsInvalid(DateTimeOffset date) => new
         {
             Condition = date == default,

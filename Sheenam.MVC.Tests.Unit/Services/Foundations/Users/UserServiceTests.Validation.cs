@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using FluentAssertions;
+﻿using FluentAssertions;
 using Moq;
 using Sheenam.MVC.Models.Users;
 using Sheenam.MVC.Models.Users.Exceptions;
@@ -25,10 +19,10 @@ namespace Sheenam.MVC.Tests.Unit.Services.Foundations.Users
                 new UserValidationException(nullUserException);
 
             //when
-            ValueTask<User> addUserTask  =
+            ValueTask<User> addUserTask =
                 this.userService.AddUserAsync(nullUser);
 
-            UserValidationException userValidationException = 
+            UserValidationException userValidationException =
                 await Assert.ThrowsAsync<UserValidationException>(() =>
                     addUserTask.AsTask());
 

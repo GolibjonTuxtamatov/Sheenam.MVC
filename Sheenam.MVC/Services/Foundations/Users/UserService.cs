@@ -1,7 +1,6 @@
 ﻿using Sheenam.MVC.Brokers.Loggings;
 using Sheenam.MVC.Brokers.Storages;
 using Sheenam.MVC.Models.Users;
-using Sheenam.MVC.Models.Users.Exceptions;
 
 namespace Sheenam.MVC.Services.Foundations.Users
 {
@@ -10,7 +9,7 @@ namespace Sheenam.MVC.Services.Foundations.Users
         private readonly IStorageBroker storageBroker;
         private readonly ILoggingBroker loggingBroker;
 
-        public UserService(IStorageBroker storageBroker,ILoggingBroker loggingBroker)
+        public UserService(IStorageBroker storageBroker, ILoggingBroker loggingBroker)
         {
             this.storageBroker = storageBroker;
             this.loggingBroker = loggingBroker;
